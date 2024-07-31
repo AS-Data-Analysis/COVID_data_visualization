@@ -16,8 +16,12 @@ CHANGE COLUMN `Country,Other` Country VARCHAR(255)
 -- Data Cleaning - Match some region names
 
 UPDATE covid_19_analysis.corona_global_latest_04_29_2020_11_38
-SET Country = 'United States'
+SET Country = 'United States of America'
 WHERE Country = 'USA';
+
+UPDATE covid_19_analysis.corona_global_latest_04_29_2020_11_38
+SET Country = 'Bahamas'
+WHERE Country = 'The Bahamas';
 
 UPDATE covid_19_analysis.corona_global_latest_04_29_2020_11_38
 SET Country = 'Cape Verde'
@@ -107,6 +111,12 @@ WHERE Country = 'Vatican City';
 
 ALTER TABLE covid_19_analysis.world_regions_sdg_united_nations
 ADD COLUMN GoverningCountry VARCHAR(255);
+
+INSERT INTO covid_19_analysis.world_regions_sdg_united_nations (Entity, Code, Year, `Sustainable Development Goals (SDG) Regions`, GoverningCountry)
+VALUES ('Taiwan',NULL, NULL, 'Taiwan', NULL);
+
+INSERT INTO covid_19_analysis.world_regions_sdg_united_nations (Entity, Code, Year, `Sustainable Development Goals (SDG) Regions`, GoverningCountry)
+VALUES ('Antarctica', NULL, NULL, 'Antarctica', NULL);
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
 SET GoverningCountry = 'Finland'
@@ -239,7 +249,7 @@ SELECT `Sustainable Development Goals (SDG) Regions`,
         SUM(TotalTests) AS total_tests
 FROM (
 	SELECT * FROM covid_19_analysis.corona_global_latest_04_29_2020_11_38 AS covid_stats
-	CROSS JOIN covid_19_analysis.world_regions_sdg_united_nations AS world_regions
+	RIGHT JOIN covid_19_analysis.world_regions_sdg_united_nations AS world_regions
 	ON covid_stats.Country = world_regions.Entity
 ) AS combined_results
 GROUP BY `Sustainable Development Goals (SDG) Regions`;
