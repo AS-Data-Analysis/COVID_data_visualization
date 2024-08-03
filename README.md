@@ -1,6 +1,6 @@
 # Distribution of COVID Data over the world
 
-**The COVID data used for this visualization is dated 29th April, 2020 which was pretty early into the pandemic. Many countries had not even declared lockdowns despite having a high count of cases and deaths.
+* The COVID data used for this visualization is dated 29th April, 2020 which was pretty early into the pandemic. Many countries had not even declared lockdowns despite having a high count of cases and deaths.
 
 *The data is categorized region-wise where the regions are defined according to the UN SDG framework here. This framework defines 8 regions that comprise the world. It is worth noting that Antarctica is not included as a separate region for obvious regions. Moreover, Taiwan although having tracked COVID data and recorded by the UN is not an actual UN member country and therefore, is shown as a separate region.
 
