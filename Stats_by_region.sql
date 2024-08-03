@@ -47,16 +47,16 @@ SET Country = 'Curacao'
 WHERE Country = 'CuraÃ§ao';
 
 UPDATE covid_19_analysis.corona_global_latest_04_29_2020_11_38
-SET Country = 'Democratic Republic of Congo'
+SET Country = 'Republic of the Congo'
+WHERE Country = 'Congo';
+
+UPDATE covid_19_analysis.corona_global_latest_04_29_2020_11_38
+SET Country = 'Democratic Republic of the Congo'
 WHERE Country = 'DRC';
 
 UPDATE covid_19_analysis.corona_global_latest_04_29_2020_11_38
 SET Country = 'Faroe Islands'
 WHERE Country = 'Faeroe Islands';
-
-UPDATE covid_19_analysis.corona_global_latest_04_29_2020_11_38
-SET Country = "Cote D'Ivoire"
-WHERE Country = 'Ivory Coast';
 
 UPDATE covid_19_analysis.corona_global_latest_04_29_2020_11_38
 SET Country = "Reunion"
@@ -106,6 +106,19 @@ UPDATE covid_19_analysis.corona_global_latest_04_29_2020_11_38
 SET Country = 'Vatican'
 WHERE Country = 'Vatican City';
 
+-- Taking care of some edge cases (to match the geojson file that is used later since it is easier to change it here)
+
+UPDATE covid_19_analysis.world_regions_sdg_united_nations
+SET Entity = 'Democratic Republic of the Congo'
+WHERE Entity = 'Democratic Republic of Congo';
+
+UPDATE covid_19_analysis.world_regions_sdg_united_nations
+SET Entity = 'Republic of the Congo'
+WHERE Entity = 'Congo';
+
+UPDATE covid_19_analysis.world_regions_sdg_united_nations
+SET Entity = "Cote d'Ivoire"
+WHERE Entity = 'Ivory Coast';
 
 -- Add a column to mention the country each region is associated with (for regions that do not have COVID data)
 
@@ -123,7 +136,7 @@ SET GoverningCountry = 'Finland'
 WHERE Entity = 'Aland Islands';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
-SET GoverningCountry = 'United States'
+SET GoverningCountry = 'United States of America'
 WHERE Entity = 'American Samoa';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
@@ -147,7 +160,7 @@ SET GoverningCountry = 'France'
 WHERE Entity = 'French Southern Territories';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
-SET GoverningCountry = 'United States'
+SET GoverningCountry = 'United States of America'
 WHERE Entity = 'Guam';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
@@ -159,7 +172,7 @@ SET GoverningCountry = 'Australia'
 WHERE Entity = 'Norfolk Island';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
-SET GoverningCountry = 'United States'
+SET GoverningCountry = 'United States of America'
 WHERE Entity = 'Northern Mariana Islands';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
@@ -167,7 +180,7 @@ SET GoverningCountry = 'United Kingdom'
 WHERE Entity = 'Pitcairn';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
-SET GoverningCountry = 'United States'
+SET GoverningCountry = 'United States of America'
 WHERE Entity = 'Puerto Rico';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
@@ -187,11 +200,11 @@ SET GoverningCountry = 'New Zealand'
 WHERE Entity = 'Tokelau';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
-SET GoverningCountry = 'United States'
+SET GoverningCountry = 'United States of America'
 WHERE Entity = 'United States Minor Outlying Islands';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
-SET GoverningCountry = 'United States'
+SET GoverningCountry = 'United States of America'
 WHERE Entity = 'United States Virgin Islands';
 
 UPDATE covid_19_analysis.world_regions_sdg_united_nations
