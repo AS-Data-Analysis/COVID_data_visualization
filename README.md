@@ -7,3 +7,5 @@
 * This pandemic has challenged healthcare industries all over the world to adapt and evolve to deal with the contagious COVID-19 virus threat.
 
 * While rich countries were quick to respond to this pandemic by putting in place healthcare facilities to quarantine individuals and testing the population rapidly, poorer countries did not fare as well. This is why the overall data is lower for developing and under-developed countries even though the population is higher.
+
+![picture alt](total_cases_region_wise.png "Title is optional")
